@@ -1,8 +1,27 @@
+@font-face {
+  font-family: AvenirLight;
+  src: url(./assets/fonts/AvenirLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: AvenirRegular;
+  src: url(./assets/fonts/AvenirRoman.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: AvenirMedium;
+  src: url(./assets/fonts/AvenirMedium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: AvenirHeavy;
+  src: url(./assets/fonts/AvenirBlack.ttf) format("truetype");
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: AvenirRegular !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +29,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.border-primary {
+  border: 1px solid rgba(0, 109, 255, 0.1) !important;
+}
+
+.max_width {
+  max-width: 720px;
+  margin: 10px auto;
 }

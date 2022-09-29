@@ -17,16 +17,21 @@ import Typography from "@mui/material/Typography";
 import enLocale from "i18n-iso-countries/langs/en.json";
 import itLocale from "i18n-iso-countries/langs/it.json";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import LogoIcon from "./indexx_affiliate_logo.png";
+// import LogoIcon from "./indexx_affiliate_logo.png";
+import indexx_logo from "./assets/indexText.svg";
+import indexGreyLogo from "./assets/indexGreyLogo.svg";
+import indexIcon from "./assets/indexIcon.svg";
 import timezones from "./timezones";
 import * as axios from "axios";
+// import { Link } from "react-router-dom";
 // import Footer from "../src/components/Footer.component";
+// import PasswordField from 'material-ui-password-field'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <AddIcon {...other} />;
 })(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+  transform: !expand ? "rotate(0deg)" : "rotate(135deg)",
   marginLeft: "auto",
   transition: theme.transitions.create("transform", {
     duration: theme.transitions.duration.shortest,
@@ -214,7 +219,7 @@ export default function App() {
     });
 
     console.log(response);
-    if(response.status === 200){
+    if (response.status === 200) {
       console.log("success");
       alert("success. We are reviewing you appplication. You receive an email when your application is approved");
     } else {
@@ -224,107 +229,121 @@ export default function App() {
 
   return (
     <div>
-      <div className="center">
-        <img src={LogoIcon} alt="indexx logo" />{" "}
+      <div className="main-header">
+        <img src={indexx_logo} alt="indexx logo" height="35" />
+        <h1 className="logo__text ">AFFILIATE PROGRAM</h1>
       </div>
-      <br></br>
-      <br></br>
-      <hr></hr>
-      <div className="center">
-        <h4>Already have an account? Log In</h4>
+      <div className="banner flex-column">
+        <div className="d-flex mt-2 ">
+          <img src={indexIcon} alt="index icon" />
+          <img src={indexGreyLogo} className="p-lg-2" alt="index grey logo" />
+        </div>
+        <h1 className="banner__heading m-3 mb-4">Affiliate Program</h1>
+        <div className="banner__card card border-primary">
+          <p className="banner__message card-body m-0">Note: The 50% commission applies once your referral completes a purchase of any ICO tokens(Indexx500, IndexxCrypto, IndexxUSD+). All the commission earned are payout when total tokens is reached to 100 for ICO token.</p>
+        </div>
       </div>
-      <h3 className="center">Join The Indexx Affiliate Program</h3>
-      <div className="center">
-        <p className="padded-multiline">
-          Believe you can exchange the world for the better with Bitcoin,
-          Blockchain, and Indexx? Join the Indexx Affiliate Program, and get
-          rewarded for your efforts when you introduce your world to Indexx, the
-          world’s leading cryptocurrency exchange. Please complete this form and
-          we will reach out to you if you meet the program criteria. For
-          information regarding the Indexx Affiliate Program contact
-          support@indexx.ai .
-        </p>
+      <div className="max_width center text-center flex-column m-aut0">
+        <h5>Already have an account? <a href="/" to="" className="text-primary">Log In</a> </h5>
+        <hr />
+        <h5>Sign up with your social network account</h5>
       </div>
+      {/* <div className="center">
+        <h3 className="center">YOUR INFORMATION</h3>
+
+      </div> */}
       <div className="form-center">
         <form className="form-inline" onSubmit={handleSubmit}>
           <br></br>
-          <hr></hr>
           <h3>YOUR INFORMATION</h3>
           <br></br>
-          <label>Full Name</label>
-          <TextField
-            id="firstName"
-            placeholder="First Name"
-            variant="outlined"
-            value={firstName}
-            onInput={(e) => setFirstName(e.target.value)}
-          />
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <TextField
-            id="lastName"
-            placeholder="Last Name"
-            variant="outlined"
-            value={lastName}
-            onInput={(e) => setLastName(e.target.value)}
-          />
+          <div className="d-flex dd">
+            <label>Full Name</label>
+            <TextField
+              id="firstName"
+              placeholder="First Name"
+              variant="outlined"
+              value={firstName}
+              style={{ width: "240px" }}
+              onInput={(e) => setFirstName(e.target.value)}
+            />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <TextField
+              id="lastName"
+              placeholder="Last Name"
+              variant="outlined"
+              value={lastName}
+              style={{ width: "240px" }}
+              onInput={(e) => setLastName(e.target.value)}
+            />
+          </div>
           <br></br>
+          <div className="d-flex dd">
+            <label>Email</label>
+            <TextField
+              id="email"
+              placeholder="you@yourdomain.com"
+              variant="outlined"
+              style={{ width: "500px" }}
+              value={email}
+              onInput={(e) => setEmail(e.target.value)}
+            />
+          </div>
           <br></br>
-          <label>Email</label>
-          <TextField
-            id="email"
-            placeholder="you@yourdomain.com"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={email}
-            onInput={(e) => setEmail(e.target.value)}
-          />
+          <div className="d-flex dd">
+            <label>Email(Confirm)</label>
+            <TextField
+              id="email"
+              placeholder="Email(Confirm)"
+              variant="outlined"
+              style={{ width: "500px" }}
+              value={emailConfirm}
+              onInput={(e) => setConfirmEmail(e.target.value)}
+            />
+          </div>
           <br></br>
+          <div className="d-flex dd">
+            <label>Username</label>
+            <TextField
+              id="username"
+              placeholder="Username"
+              variant="outlined"
+              style={{ width: "500px" }}
+              value={userName}
+              onInput={(e) => setUserName(e.target.value)}
+              autoComplete="off"
+            />
+          </div>
           <br></br>
-          <label>Email(Confirm)</label>
-          <TextField
-            id="email"
-            placeholder="Email(Confirm)"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={emailConfirm}
-            onInput={(e) => setConfirmEmail(e.target.value)}
-          />
+          <div className="d-flex dd">
+            <label>Password</label>
+            <TextField
+              id="password"
+              placeholder="Password"
+              variant="outlined"
+              style={{ width: "500px" }}
+              value={password}
+              type="password"
+              onInput={(e) => setPassword(e.target.value)}
+              autoComplete="new-password"
+            />
+          </div>
           <br></br>
-          <br></br>
-          <label>Username</label>
-          <TextField
-            id="username"
-            placeholder="Username"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={userName}
-            onInput={(e) => setUserName(e.target.value)}
-          />
-          <br></br>
-          <br></br>
-          <label>Password</label>
-          <TextField
-            id="password"
-            placeholder="Password"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={password}
-            onInput={(e) => setPassword(e.target.value)}
-          />
-          <br></br>
-          <br></br>
-          <label>Password(Confirm)</label>
-          <TextField
-            id="passwordconfirm"
-            placeholder="Password(Confirm)"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={confirmPassword}
-            onInput={(e) => setConfirmPassword(e.target.value)}
-          />
+          <div className="d-flex dd">
+            <label>Password(Confirm)</label>
+            <TextField
+              id="passwordconfirm"
+              placeholder="Password(Confirm)"
+              variant="outlined"
+              style={{ width: "500px" }}
+              type="password"
+              value={confirmPassword}
+              onInput={(e) => setConfirmPassword(e.target.value)}
+              autoComplete="new-password"
+            />
+          </div>
           <br></br> <br></br> <br></br>
           <h3>COMPANY/INDIVIDUAL INFORMATION</h3>
-          <br></br>
           <br></br>
           <FormControl>
             <RadioGroup
@@ -335,205 +354,217 @@ export default function App() {
               onChange={(e) => selectIsCompanyHandler(e.target.value)}
             >
               <label>Are you a company?</label>
-              <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+              <FormControlLabel value="Yes" control={<Radio />} label="Yes" style={{ width: 140 }} />
               <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
           </FormControl>
           <br></br>
           <br></br>
-          <label>Account Display Name</label>
-          <TextField
-            id="displayName"
-            placeholder="Account Display Name"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={displayName}
-            onInput={(e) => setDisplayName(e.target.value)}
-          />
+          <div className="d-flex dd">
+            <label>Account Display Name</label>
+            <TextField
+              id="displayName"
+              placeholder="Account Display Name"
+              variant="outlined"
+              style={{ width: "500px" }}
+              value={displayName}
+              onInput={(e) => setDisplayName(e.target.value)}
+            />
+          </div>
           <br></br>
+          <div className="d-flex dd">
+            <label>Company Website</label>
+            <TextField
+              id="displayName"
+              placeholder="www.yourdomain.com"
+              variant="outlined"
+              style={{ width: "500px" }}
+              value={companyURL}
+              onInput={(e) => setCompanyURL(e.target.value)}
+            />
+          </div>
           <br></br>
-          <label>Company Website</label>
-          <TextField
-            id="displayName"
-            placeholder="www.yourdomain.com"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={companyURL}
-            onInput={(e) => setCompanyURL(e.target.value)}
-          />
+          <div className="d-flex dd">
+            <label> Country</label>{" "}
+            <Select
+              style={{ width: "496px" }}
+              value={selectedCountry}
+              variant="outlined"
+              onChange={(e) => selectCountryHandler(e.target.value)}
+            >
+              {!!countryArr?.length &&
+                countryArr.map(({ label, value }) => (
+                  <MenuItem key={value} value={label}>
+                    {label}
+                  </MenuItem>
+                ))}
+            </Select>
+          </div>
           <br></br>
+          <div className="d-flex dd">
+            <label>Street Address 1</label>
+            <TextField
+              id="streetaddress1"
+              placeholder="Street Address 1"
+              variant="outlined"
+              style={{ width: "500px" }}
+              value={streetAddress1}
+              onInput={(e) => setStreetAddress1(e.target.value)}
+            />
+          </div>
           <br></br>
-          <label> Country</label>{" "}
-          <Select
-            style={{ width: "384px" }}
-            value={selectedCountry}
-            variant="outlined"
-            onChange={(e) => selectCountryHandler(e.target.value)}
-          >
-            {!!countryArr?.length &&
-              countryArr.map(({ label, value }) => (
-                <MenuItem key={value} value={label}>
-                  {label}
-                </MenuItem>
-              ))}
-          </Select>
+          <div className="d-flex dd">
+            <label>Street Address 2</label>
+            <TextField
+              id="streetaddress2"
+              placeholder="Street Address 2"
+              variant="outlined"
+              style={{ width: "500px" }}
+              value={streetAddress2}
+              onInput={(e) => setStreetAddress2(e.target.value)}
+            />
+          </div>
           <br></br>
+          <div className="d-flex dd">
+            <label>City, Zip</label>
+            <TextField
+              id="city"
+              placeholder="City"
+              variant="outlined"
+              style={{ width: "240px" }}
+              value={city}
+              onInput={(e) => setCity(e.target.value)}
+            />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <TextField
+              id="zip"
+              placeholder="Zip"
+              variant="outlined"
+              style={{ width: "240px" }}
+              value={zipCode}
+              onInput={(e) => setZipCode(e.target.value)}
+            />
+          </div>
           <br></br>
-          <label>Street Address 1</label>
-          <TextField
-            id="streetaddress1"
-            placeholder="Street Address 1"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={streetAddress1}
-            onInput={(e) => setStreetAddress1(e.target.value)}
-          />
+          <div className="d-flex dd">
+            <label> Phone Number</label>
+            <TextField
+              id="phone"
+              placeholder="Enter the phone number"
+              variant="outlined"
+              style={{ width: "500px" }}
+              value={phoneNumber}
+              onInput={(e) => setPhoneNumber(e.target.value)}
+            />
+          </div>
           <br></br>
+          <div className="d-flex dd">
+            <label> Timezone</label>{" "}
+            <Select
+              style={{ width: "496px" }}
+              value={selectedTimeZone}
+              variant="outlined"
+              onChange={(e) => selectTimeZoneHandler(e.target.value)}
+            >
+              {!!timezones?.length &&
+                timezones.map(({ text, value }) => (
+                  <MenuItem key={text} value={text}>
+                    {text}
+                  </MenuItem>
+                ))}
+            </Select>
+          </div>
           <br></br>
-          <label>Street Address 2</label>
-          <TextField
-            id="streetaddress2"
-            placeholder="Street Address 2"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={streetAddress2}
-            onInput={(e) => setStreetAddress2(e.target.value)}
-          />
+          <div className="d-flex dd">
+            <label>How do we contact you? (through Social Media)*</label>
+            <Select
+              style={{ width: "500px" }}
+              value={selectedSocialMedia}
+              variant="outlined"
+              onChange={(e) => selectSocialMediaHandler(e.target.value)}
+            >
+              {!!socialMediaArr?.length &&
+                socialMediaArr.map(({ optionKey, value }) => (
+                  <MenuItem key={optionKey} value={value}>
+                    {value}
+                  </MenuItem>
+                ))}
+            </Select>
+          </div>
           <br></br>
+          <div className="d-flex dd">
+            <label>Username (to contact you on Social Media)* </label>
+            <TextField
+              id="socialmediaUsername"
+              placeholder="Enter username"
+              variant="outlined"
+              style={{ width: "500px" }}
+              value={socialMediaUsername}
+              onInput={(e) => setsocialMediaUsername(e.target.value)}
+            />
+          </div>
           <br></br>
-          <label>City, Zip</label>
-          <TextField
-            id="city"
-            placeholder="City"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={city}
-            onInput={(e) => setCity(e.target.value)}
-          />
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <TextField
-            id="zip"
-            placeholder="Zip"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={zipCode}
-            onInput={(e) => setZipCode(e.target.value)}
-          />
+          <div className="d-flex dd">
+            <label>Select your Affiliate type</label>{" "}
+            <Select
+              style={{ width: "496px" }}
+              value={affiliateType}
+              variant="outlined"
+              onChange={(e) => setAffiliateType(e.target.value)}
+            >
+              {!!affiliateTypeArr?.length &&
+                affiliateTypeArr.map(({ optionKey, value }) => (
+                  <MenuItem key={value} value={value}>
+                    {optionKey}
+                  </MenuItem>
+                ))}
+            </Select>
+          </div>
           <br></br>
+          <div className="d-flex dd">
+            <label>
+              What kind of content do you create in your platform/for your
+              community?*
+            </label>
+            <Select
+              style={{ width: "500px" }}
+              variant="outlined"
+              value={selectedPlaftormCommunity}
+              onChange={(e) => selectPlaftormCommunityHandler(e.target.value)}
+            >
+              {!!platformCommunityArr?.length &&
+                platformCommunityArr.map(({ optionKey, value }) => (
+                  <MenuItem key={optionKey} value={value}>
+                    {value}
+                  </MenuItem>
+                ))}
+            </Select>
+          </div>
           <br></br>
-          <label> Phone Number</label>
-          <TextField
-            id="phone"
-            placeholder="Enter the phone number"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={phoneNumber}
-            onInput={(e) => setPhoneNumber(e.target.value)}
-          />
+          <div className="d-flex dd">
+            <label>Is there anything else that you would like to share?</label>
+            <TextField
+              id="platformUrl"
+              type="text"
+              placeholder="Enter number of followers/members/users"
+              variant="outlined"
+              style={{ width: "500px" }}
+              onInput={(e) => setExtraInformation(e.target.value)}
+              value={extraInformation}
+            />
+          </div>
           <br></br>
-          <br></br>
-          <label> Timezone</label>{" "}
-          <Select
-            style={{ width: "384px" }}
-            value={selectedTimeZone}
-            variant="outlined"
-            onChange={(e) => selectTimeZoneHandler(e.target.value)}
-          >
-            {!!timezones?.length &&
-              timezones.map(({ text, value }) => (
-                <MenuItem key={text} value={text}>
-                  {text}
-                </MenuItem>
-              ))}
-          </Select>
-          <br></br>
-          <br></br>
-          <label>How do we contact you? (through Social Media)*</label>
-          <Select
-            style={{ width: "384px" }}
-            value={selectedSocialMedia}
-            variant="outlined"
-            onChange={(e) => selectSocialMediaHandler(e.target.value)}
-          >
-            {!!socialMediaArr?.length &&
-              socialMediaArr.map(({ optionKey, value }) => (
-                <MenuItem key={optionKey} value={value}>
-                  {value}
-                </MenuItem>
-              ))}
-          </Select>
-          <br></br>
-          <br></br>
-          <label>Username (to contact you on Social Media)* </label>
-          <TextField
-            id="socialmediaUsername"
-            placeholder="Enter username"
-            variant="outlined"
-            style={{ width: "384px" }}
-            value={socialMediaUsername}
-            onInput={(e) => setsocialMediaUsername(e.target.value)}
-          />
-          <br></br>
-          <br></br>
-          <br></br>
-          <label>Select your Affiliate type</label>{" "}
-          <Select
-            style={{ width: "384px" }}
-            value={affiliateType}
-            variant="outlined"
-            onChange={(e) => setAffiliateType(e.target.value)}
-          >
-            {!!affiliateTypeArr?.length &&
-              affiliateTypeArr.map(({ optionKey, value }) => (
-                <MenuItem key={value} value={value}>
-                  {optionKey}
-                </MenuItem>
-              ))}
-          </Select>
-          <br></br>
-          <br></br>
-          <br></br>
-          <label>
-            What kind of content do you create in your platform/for your
-            community?*
-          </label>
-          <Select
-            style={{ width: "384px" }}
-            variant="outlined"
-            value={selectedPlaftormCommunity}
-            onChange={(e) => selectPlaftormCommunityHandler(e.target.value)}
-          >
-            {!!platformCommunityArr?.length &&
-              platformCommunityArr.map(({ optionKey, value }) => (
-                <MenuItem key={optionKey} value={value}>
-                  {value}
-                </MenuItem>
-              ))}
-          </Select>
-          <br></br>
-          <br></br>
-          <label>Is there anything else that you would like to share?</label>
-          <TextField
-            id="platformUrl"
-            type="text"
-            placeholder="Enter number of followers/members/users"
-            variant="outlined"
-            style={{ width: "384px" }}
-            onInput={(e) => setExtraInformation(e.target.value)}
-            value={extraInformation}
-          />
-          <br></br>
-          <br></br>
-          <br></br>
-          <h3>Agreement</h3>
-          <Card>
-            <CardActions disableSpacing>
+          <h3 className="mb-3 mt-5">Agreement</h3>
+          <Card style={{ boxShadow: "none" }}>
+            <CardActions disableSpacing
+              style={{ backgroundColor: "#9F9F9F", boxShadow: "none" }}>
               <Typography
                 type="headline"
-                component="h2"
+                component="h4"
                 variant="background"
                 grey
-                color
+                color='#fff'
+                className="p-2"
               >
                 Commission on Buy/Trade: 50 %
               </Typography>
@@ -543,31 +574,26 @@ export default function App() {
                 onClick={handleExpandClick}
                 aria-expanded={expanded}
                 aria-label="show more"
+                className="cursor-pointer"
+                style={{ color: "#fff", fontSize: "2.5rem" }}
               >
                 <AddIcon />
               </ExpandMore>
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardContent>
-                <Typography paragraph>
-                  <b>Payout Details</b>
-                </Typography>
+                <h3>Payout Details</h3>
                 <Typography paragraph>
                   Payouts are processed when affiliate reachs total commission
                   of 100 USD.
                 </Typography>
                 <br></br>
-                <Typography paragraph>
-                  <b>Payout Currency</b>
-                </Typography>
-                <br></br>
+                <h3 className="mt-4">Payout Currency</h3>
                 <Typography paragraph>
                   All payouts are processed in Indexx tokens only like
                   Indexx500, IndexxCrypto, IndexxUSD+ etc.
                 </Typography>
-                <Typography paragraph>
-                  <b>Payout Schedule</b>
-                </Typography>
+                <h3 className="mt-4">Payout Schedule</h3>
                 <Typography paragraph>
                   Payouts are processed on Monthly basis and if affiliate user
                   reachs total commsion of 100 USD then payout is automatically
@@ -577,28 +603,20 @@ export default function App() {
             </Collapse>
           </Card>
           <br></br>
-          <br></br>
-          <br></br>
           <div>
-            <div>
+            <div class="d-grid gap-2">
               <button
                 data-bn-type="button"
                 onSubmit={handleSubmit}
-                class="btn-form-submit button-submit"
+                className="btn-form-submit button-submit btn btn-primary btn-lg mt-3 mb-5"
               >
                 <div>Submit</div>
-              </button>
-              <button
-                data-bn-type="button"
-                class="btn-form-reset button-cancel"
-              >
-                Reset
               </button>
             </div>
           </div>
         </form>
-      </div>
+      </div >
       {/* <Footer /> */}
-    </div>
+    </div >
   );
 }
