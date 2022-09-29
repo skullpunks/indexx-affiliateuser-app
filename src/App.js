@@ -194,7 +194,7 @@ export default function App() {
     console.log("isCompany:", isCompany);
     // You should see email and password in console.
     // ..code to submit form to backend here...
-    const response = await axios.post(`http://localhost:5000/api/v1/addaffiliateuser`, {
+    const response = await axios.post(`https://1b21-49-207-219-159.ngrok.io/api/v1/addaffiliateuser`, {
       email,
       userName,
       password,
@@ -221,7 +221,7 @@ export default function App() {
     console.log(response);
     if (response.status === 200) {
       console.log("success");
-      alert("success. We are reviewing you appplication. You receive an email when your application is approved");
+      alert("Registration success. We are reviewing your application. You receive an email when your application is approved");
     } else {
       alert("Something went error! Please contact us support@indexx.ai");
     }
