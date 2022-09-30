@@ -192,38 +192,41 @@ export default function App() {
     console.log("confirmPassword:", confirmPassword);
     console.log("emailConfirm:", emailConfirm);
     console.log("isCompany:", isCompany);
-    // You should see email and password in console.
-    // ..code to submit form to backend here...
-    const response = await axios.post(`https://1b21-49-207-219-159.ngrok.io/api/v1/addaffiliateuser`, {
-      email,
-      userName,
-      password,
-      confirmPassword,
-      isCompany,
-      firstName,
-      lastName,
-      phoneNumber,
-      selectedCountry,
-      selectedTimeZone,
-      selectedSocialMedia,
-      selectedPlaftormCommunity,
-      socialMediaUsername,
-      affiliateType,
-      extraInformation,
-      companyURL,
-      streetAddress1,
-      streetAddress2,
-      city,
-      zipCode,
-      emailConfirm,
-    });
+    if (email && password && userName && confirmPassword && emailConfirm && firstName && lastName && phoneNumber && selectedCountry && selectedTimeZone && selectedSocialMedia && selectedPlaftormCommunity && socialMediaUsername && affiliateType && extraInformation && companyURL && streetAddress1 && streetAddress2 && city && zipCode) {
+      // ..code to submit form to backend here...
+      const response = await axios.post(`https://1b21-49-207-219-159.ngrok.io/api/v1/addaffiliateuser`, {
+        email,
+        userName,
+        password,
+        confirmPassword,
+        isCompany,
+        firstName,
+        lastName,
+        phoneNumber,
+        selectedCountry,
+        selectedTimeZone,
+        selectedSocialMedia,
+        selectedPlaftormCommunity,
+        socialMediaUsername,
+        affiliateType,
+        extraInformation,
+        companyURL,
+        streetAddress1,
+        streetAddress2,
+        city,
+        zipCode,
+        emailConfirm,
+      });
 
-    console.log(response);
-    if (response.status === 200) {
-      console.log("success");
-      alert("Registration success. We are reviewing your application. You receive an email when your application is approved");
+      console.log(response);
+      if (response.status === 200) {
+        console.log("success");
+        alert("Registration success. We are reviewing your application. You receive an email when your application is approved");
+      } else {
+        alert("Something went error! Please contact us support@indexx.ai");
+      }
     } else {
-      alert("Something went error! Please contact us support@indexx.ai");
+      alert("Please fill all the fields");
     }
   }
 
@@ -240,7 +243,7 @@ export default function App() {
         </div>
         <h1 className="banner__heading m-3 mb-4">Affiliate Program</h1>
         <div className="banner__card card border-primary">
-          <p className="banner__message card-body m-0">Note: The 50% commission applies once your referral completes a purchase of any ICO tokens(Indexx500, IndexxCrypto, IndexxUSD+). All the commission earned are payout when total tokens is reached to 100 for ICO token.</p>
+          <p className="banner__message card-body m-0">Note: The 50% commission applies once your referral completes a purchase of any ICO tokens (Indexx500, IndexxCrypto, IndexxUSD+). All the commission earned are payout when total tokens is reached to 100 for ICO token.</p>
         </div>
       </div>
       <div className="max_width center text-center flex-column m-aut0">
@@ -474,7 +477,7 @@ export default function App() {
                 ))}
             </Select>
           </div>
-          <br></br>
+          <h3 className="mb-3 mt-5">PROMOTIONAL INFORMATION</h3>
           <div className="d-flex dd">
             <label>How do we contact you? (through Social Media)*</label>
             <Select
@@ -554,7 +557,7 @@ export default function App() {
             />
           </div>
           <br></br>
-          <h3 className="mb-3 mt-5">Agreement</h3>
+          <h3 className="mb-3 mt-5">AGREEMENTS</h3>
           <Card style={{ boxShadow: "none" }}>
             <CardActions disableSpacing
               style={{ backgroundColor: "#9F9F9F", boxShadow: "none" }}>
@@ -585,18 +588,18 @@ export default function App() {
                 <h3>Payout Details</h3>
                 <Typography paragraph>
                   Payouts are processed when affiliate reachs total commission
-                  of 100 USD.
+                  of 100 Tokens any one of the Indexx Token.
                 </Typography>
                 <br></br>
                 <h3 className="mt-4">Payout Currency</h3>
                 <Typography paragraph>
                   All payouts are processed in Indexx tokens only like
-                  Indexx500, IndexxCrypto, IndexxUSD+ etc.
+                  Indexx500(IN500), IndexxCrypto(INXC), IndexxUSD+(IUSD+) etc.
                 </Typography>
                 <h3 className="mt-4">Payout Schedule</h3>
                 <Typography paragraph>
-                  Payouts are processed on Monthly basis and if affiliate user
-                  reachs total commsion of 100 USD then payout is automatically
+                  Payouts are processed on request basis and if affiliate user
+                  reachs total commsion of 100  any one of the Indexx Token then payout is automatically
                   done.Payouts are reset to zero once withdraw is processed.
                 </Typography>
               </CardContent>
