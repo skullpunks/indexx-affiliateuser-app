@@ -194,7 +194,7 @@ export default function App() {
     console.log("isCompany:", isCompany);
     if (email && password && userName && confirmPassword && emailConfirm && firstName && lastName && phoneNumber && selectedCountry && selectedTimeZone && selectedSocialMedia && selectedPlaftormCommunity && socialMediaUsername && affiliateType && extraInformation && companyURL && streetAddress1 && streetAddress2 && city && zipCode) {
       // ..code to submit form to backend here...
-      const response = await axios.post(`http://3.115.189.8:5000/api/v1/addaffiliateuser`, {
+      const response = await axios.post(`https://1b21-49-207-219-159.ngrok.io/api/v1/addaffiliateuser`, {
         email,
         userName,
         password,
