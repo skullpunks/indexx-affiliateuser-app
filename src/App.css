@@ -319,8 +319,8 @@ label {
 }
 
 .main-header {
-  background-color: #000;
-  padding: 20px 90px;
+  background-color: hwb(0deg 0% 100% / 77%);
+  padding: 25px 90px;
   height: 90px;
   position: sticky;
   display: flex;
@@ -332,6 +332,9 @@ label {
 .logo__text {
   color: #fff;
   padding-left: 10px;
+  font-size: 30px;
+  margin-bottom: 0;
+  line-height: 1.4;
 }
 
 /* 
@@ -374,7 +377,7 @@ label {
 .banner__heading {
 
   font-size: 97px;
-  line-height: 133px;
+  line-height: initial;
   text-align: center;
 
   color: #5F5F5F;
@@ -993,4 +996,35 @@ input, select {
 .banner__card.border-primary {
   border-color: rgba(0, 109, 255, 0.3) !important;
 
+}
+
+.primary-button {
+  background: #006DFF;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: none;
+
+}
+
+.link_button {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin-bottom:100px;
+}
+
+.banner__card.card.home_a {
+  border:0;
+}
+
+.home_a_logo{
+  font-size: 35px;
+    color: #5f5f5f;
+    align-items: self-end;
+}
+
+.home_a_logo .home_logo_link {
+  color:#006DFF;
 }
