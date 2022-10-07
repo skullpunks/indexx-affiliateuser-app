@@ -226,10 +226,14 @@ export default function App() {
       });
 
       console.log(response);
-      if (response.status === 200) {
+      if(response.status === 200 && response.data.message === "Email already exist!") {
+        alert("Email already exist! Please sign in or use another email");
+      }
+      else if (response.status === 200) {
         console.log("success");
         alert("Registration success. We are reviewing your application. You receive an email when your application is approved");
-      } else {
+      } 
+       else {
         alert("Something went error! Please contact us support@indexx.ai");
       }
     } else {
