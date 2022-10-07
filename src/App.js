@@ -23,6 +23,7 @@ import indexGreyLogo from "./assets/indexGreyLogo.svg";
 import indexIcon from "./assets/indexIcon.svg";
 import timezones from "./timezones";
 import * as axios from "axios";
+
 // import { Link } from "react-router-dom";
 // import Footer from "../src/components/Footer.component";
 // import PasswordField from 'material-ui-password-field'
@@ -192,7 +193,13 @@ export default function App() {
     console.log("confirmPassword:", confirmPassword);
     console.log("emailConfirm:", emailConfirm);
     console.log("isCompany:", isCompany);
-    if (email && password && userName && confirmPassword && emailConfirm && firstName && lastName && phoneNumber && selectedCountry && selectedTimeZone && selectedSocialMedia && selectedPlaftormCommunity && socialMediaUsername && affiliateType && extraInformation && companyURL && streetAddress1 && streetAddress2 && city && zipCode) {
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+    }
+    if (email !== emailConfirm) {
+      alert("Emails do not match");
+    }
+    if (email && password && userName && confirmPassword && emailConfirm && firstName && lastName && phoneNumber && selectedCountry && selectedTimeZone && selectedSocialMedia && selectedPlaftormCommunity && socialMediaUsername && affiliateType && companyURL && streetAddress1 && city && zipCode) {
       // ..code to submit form to backend here...
       const response = await axios.post(`https://1b21-49-207-219-159.ngrok.io/api/v1/addaffiliateuser`, {
         email,
@@ -247,7 +254,7 @@ export default function App() {
         </div>
       </div>
       <div className="max_width center text-center flex-column m-aut0">
-        <h5>Already have an account? <a href="https://guileless-douhua-00f980.netlify.app/" to="" className="text-primary">Log In</a> </h5>
+        <h5>Already have an account? <a href="https://login.affiliate.indexx.ai/" to="" className="text-primary">Log In</a> </h5>
         <hr />
         <h5>Sign up with your social network account</h5>
       </div>
@@ -256,12 +263,12 @@ export default function App() {
 
       </div> */}
       <div className="form-center">
-        <form className="form-inline" onSubmit={handleSubmit}>
+        <form className={"form-inline"} onSubmit={handleSubmit} autoComplete="off">
           <br></br>
           <h3>YOUR INFORMATION</h3>
           <br></br>
           <div className="d-flex dd">
-            <label>Full Name</label>
+            <label>Full Name*</label>
             <TextField
               id="firstName"
               placeholder="First Name"
@@ -269,6 +276,7 @@ export default function App() {
               value={firstName}
               style={{ width: "240px" }}
               onInput={(e) => setFirstName(e.target.value)}
+              required
             />
             &nbsp;&nbsp;&nbsp;&nbsp;
             <TextField
@@ -278,11 +286,12 @@ export default function App() {
               value={lastName}
               style={{ width: "240px" }}
               onInput={(e) => setLastName(e.target.value)}
+              required
             />
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label>Email</label>
+            <label>Email*</label>
             <TextField
               id="email"
               placeholder="you@yourdomain.com"
@@ -290,11 +299,12 @@ export default function App() {
               style={{ width: "500px" }}
               value={email}
               onInput={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label>Email(Confirm)</label>
+            <label>Email(Confirm)*</label>
             <TextField
               id="email"
               placeholder="Email(Confirm)"
@@ -302,11 +312,12 @@ export default function App() {
               style={{ width: "500px" }}
               value={emailConfirm}
               onInput={(e) => setConfirmEmail(e.target.value)}
+              required
             />
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label>Username</label>
+            <label>Username*</label>
             <TextField
               id="username"
               placeholder="Username"
@@ -314,12 +325,12 @@ export default function App() {
               style={{ width: "500px" }}
               value={userName}
               onInput={(e) => setUserName(e.target.value)}
-              autoComplete="off"
+              required
             />
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label>Password</label>
+            <label>Password*</label>
             <TextField
               id="password"
               placeholder="Password"
@@ -329,11 +340,12 @@ export default function App() {
               type="password"
               onInput={(e) => setPassword(e.target.value)}
               autoComplete="new-password"
+              required
             />
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label>Password(Confirm)</label>
+            <label>Password(Confirm)*</label>
             <TextField
               id="passwordconfirm"
               placeholder="Password(Confirm)"
@@ -343,6 +355,7 @@ export default function App() {
               value={confirmPassword}
               onInput={(e) => setConfirmPassword(e.target.value)}
               autoComplete="new-password"
+              required
             />
           </div>
           <br></br> <br></br> <br></br>
@@ -355,8 +368,9 @@ export default function App() {
               name="row-radio-buttons-group"
               value={isCompany}
               onChange={(e) => selectIsCompanyHandler(e.target.value)}
+              required
             >
-              <label>Are you a company?</label>
+              <label>Are you a company?*</label>
               <FormControlLabel value="Yes" control={<Radio />} label="Yes" style={{ width: 140 }} />
               <FormControlLabel value="No" control={<Radio />} label="No" />
             </RadioGroup>
@@ -364,7 +378,7 @@ export default function App() {
           <br></br>
           <br></br>
           <div className="d-flex dd">
-            <label>Account Display Name</label>
+            <label>Account Display Name*</label>
             <TextField
               id="displayName"
               placeholder="Account Display Name"
@@ -372,11 +386,12 @@ export default function App() {
               style={{ width: "500px" }}
               value={displayName}
               onInput={(e) => setDisplayName(e.target.value)}
+              required
             />
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label>Company Website</label>
+            <label>Company Website*</label>
             <TextField
               id="displayName"
               placeholder="www.yourdomain.com"
@@ -384,16 +399,18 @@ export default function App() {
               style={{ width: "500px" }}
               value={companyURL}
               onInput={(e) => setCompanyURL(e.target.value)}
+              required
             />
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label> Country</label>{" "}
+            <label> Country*</label>
             <Select
               style={{ width: "496px" }}
               value={selectedCountry}
               variant="outlined"
               onChange={(e) => selectCountryHandler(e.target.value)}
+              required
             >
               {!!countryArr?.length &&
                 countryArr.map(({ label, value }) => (
@@ -405,7 +422,7 @@ export default function App() {
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label>Street Address 1</label>
+            <label>Street Address 1*</label>
             <TextField
               id="streetaddress1"
               placeholder="Street Address 1"
@@ -413,6 +430,7 @@ export default function App() {
               style={{ width: "500px" }}
               value={streetAddress1}
               onInput={(e) => setStreetAddress1(e.target.value)}
+              required
             />
           </div>
           <br></br>
@@ -429,7 +447,7 @@ export default function App() {
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label>City, Zip</label>
+            <label>City&, Zip*</label>
             <TextField
               id="city"
               placeholder="City"
@@ -437,6 +455,7 @@ export default function App() {
               style={{ width: "240px" }}
               value={city}
               onInput={(e) => setCity(e.target.value)}
+              required
             />
             &nbsp;&nbsp;&nbsp;&nbsp;
             <TextField
@@ -446,11 +465,12 @@ export default function App() {
               style={{ width: "240px" }}
               value={zipCode}
               onInput={(e) => setZipCode(e.target.value)}
+              required
             />
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label> Phone Number</label>
+            <label>Phone Number*</label>
             <TextField
               id="phone"
               placeholder="Enter the phone number"
@@ -458,11 +478,12 @@ export default function App() {
               style={{ width: "500px" }}
               value={phoneNumber}
               onInput={(e) => setPhoneNumber(e.target.value)}
+              required
             />
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label> Timezone</label>{" "}
+            <label>Timezone*</label>{" "}
             <Select
               style={{ width: "496px" }}
               value={selectedTimeZone}
@@ -485,6 +506,7 @@ export default function App() {
               value={selectedSocialMedia}
               variant="outlined"
               onChange={(e) => selectSocialMediaHandler(e.target.value)}
+              required
             >
               {!!socialMediaArr?.length &&
                 socialMediaArr.map(({ optionKey, value }) => (
@@ -504,16 +526,18 @@ export default function App() {
               style={{ width: "500px" }}
               value={socialMediaUsername}
               onInput={(e) => setsocialMediaUsername(e.target.value)}
+              required
             />
           </div>
           <br></br>
           <div className="d-flex dd">
-            <label>Select your Affiliate type</label>{" "}
+            <label>Select your Affiliate type*</label>{" "}
             <Select
               style={{ width: "496px" }}
               value={affiliateType}
               variant="outlined"
               onChange={(e) => setAffiliateType(e.target.value)}
+              required
             >
               {!!affiliateTypeArr?.length &&
                 affiliateTypeArr.map(({ optionKey, value }) => (
@@ -534,6 +558,7 @@ export default function App() {
               variant="outlined"
               value={selectedPlaftormCommunity}
               onChange={(e) => selectPlaftormCommunityHandler(e.target.value)}
+              required
             >
               {!!platformCommunityArr?.length &&
                 platformCommunityArr.map(({ optionKey, value }) => (
