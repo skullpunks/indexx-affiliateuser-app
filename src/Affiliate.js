@@ -254,7 +254,7 @@ export default function App() {
         </div>
       </div>
       <div className="max_width center text-center flex-column m-aut0">
-        <h5>Already have an account? <a href="https://guileless-douhua-00f980.netlify.app/" to="" className="text-primary">Log In</a> </h5>
+        <h5>Already have an account? <a href="https://login.affiliate.indexx.ai/" to="" className="text-primary">Log In</a> </h5>
         <hr />
         <h5>Sign up with your social network account</h5>
       </div>
