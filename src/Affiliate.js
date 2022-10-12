@@ -201,7 +201,7 @@ export default function App() {
     }
     if (email && password && userName && confirmPassword && emailConfirm && firstName && lastName && phoneNumber && selectedCountry && selectedTimeZone && selectedSocialMedia && selectedPlaftormCommunity && socialMediaUsername && affiliateType && companyURL && streetAddress1 && city && zipCode) {
       // ..code to submit form to backend here...
-      const response = await axios.post(`https://1b21-49-207-219-159.ngrok.io/api/v1/addaffiliateuser`, {
+      const response = await axios.post(`https://f099-2406-7400-56-2f85-d0b7-d90b-d95f-a4b9.ngrok.io/api/v1/addaffiliateuser`, {
         email,
         userName,
         password,
@@ -254,7 +254,7 @@ export default function App() {
         </div>
         <h1 className="banner__heading m-3 mb-4">Affiliate Program</h1>
         <div className="banner__card card border-primary">
-          <p className="banner__message card-body m-0">Note: The 50% commission applies once your referral completes a purchase of any ICO tokens (Indexx500, IndexxCrypto, IndexxUSD+). All the commission earned are payout when total tokens is reached to 100 for ICO token.</p>
+          <p className="banner__message card-body m-0"><span> Note: The <span style={{ fontSize: 35, display: "inline-block" }}>50% commission </span> applies once your referral completes a purchase of any ICO tokens (Indexx500, IndexxCrypto, IndexxUSD+). All the commission earned are payout when total tokens is reached to 100 for ICO token. </span></p>
         </div>
       </div>
       <div className="max_width center text-center flex-column m-aut0">
