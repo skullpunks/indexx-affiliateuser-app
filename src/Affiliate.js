@@ -253,8 +253,9 @@ export default function App() {
           <img src={indexGreyLogo} className="p-lg-2" alt="index grey logo" />
         </div>
         <h1 className="banner__heading m-3 mb-4">Affiliate Program</h1>
+        <h1> <strong>50% Commission </strong></h1>
         <div className="banner__card card border-primary">
-          <p className="banner__message card-body m-0"><span> Note: The <span style={{ fontSize: 35, display: "inline-block" }}>50% commission </span> applies once your referral completes a purchase of any ICO tokens (Indexx500, IndexxCrypto, IndexxUSD+). All the commission earned are payout when total tokens is reached to 100 for ICO token. </span></p>
+          <p className="banner__message card-body m-0"><span> Note: This commision applies once your referral completes a purchase of any ICO tokens (Indexx500, IndexxCrypto, IndexxUSD+). All the commission earned are payout when total tokens is reached to 100 for ICO token. </span></p>
         </div>
       </div>
       <div className="max_width center text-center flex-column m-aut0">
