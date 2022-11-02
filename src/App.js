@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import { render } from "react-dom";
-import AffiliateHome from './AffiliateHome';``
+import AffiliateHome from './AffiliateHome';
 import Affiliate from "./Affiliate";
 
 

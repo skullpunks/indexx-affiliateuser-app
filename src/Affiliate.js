@@ -19,8 +19,8 @@ import itLocale from "i18n-iso-countries/langs/it.json";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import LogoIcon from "./indexx_affiliate_logo.png";
 import indexx_logo from "./assets/indexText.svg";
-import indexGreyLogo from "./assets/indexGreyLogo.svg";
-import indexIcon from "./assets/indexIcon.svg";
+// import indexGreyLogo from "./assets/indexGreyLogo.svg";
+// import indexIcon from "./assets/indexIcon.svg";
 import timezones from "./timezones";
 import * as axios from "axios";
 import Footer from "../src/components/Footer.component";
@@ -244,8 +244,8 @@ export default function App() {
   return (
     <div>
       <div className="main-header">
-        <img src={indexx_logo} alt="indexx logo" height="35" />
-        <h1 className="logo__text">AFFILIATE PROGRAM</h1>
+        <img src={indexx_logo} alt="indexx logo" height="25" />
+        <h1 className="logo__text ps-3">Affiliate Program</h1>
       </div>
       <div className="banner flex-column banner_affiliate_form">
         {/* <div className="d-flex mt-2 ">
