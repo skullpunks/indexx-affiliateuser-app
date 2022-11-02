@@ -248,12 +248,12 @@ export default function App() {
         <h1 className="logo__text">AFFILIATE PROGRAM</h1>
       </div>
       <div className="banner flex-column banner_affiliate_form">
-        <div className="d-flex mt-2 ">
+        {/* <div className="d-flex mt-2 ">
           <img src={indexIcon} alt="index icon" />
           <img src={indexGreyLogo} className="p-lg-2" alt="index grey logo" />
-        </div>
+        </div> */}
         <h1 className="banner__heading m-3 mb-4">Affiliate Program</h1>
-        <h1> <strong>50% Commission </strong></h1>
+        {/* <h1> <strong>50% Commission </strong></h1> */}
         <div className="banner__card card border-primary">
           <p className="banner__message card-body m-0"><span> Note: This commision applies once your referral completes a purchase of any ICO tokens (Indexx500, IndexxCrypto, IndexxUSD+). All the commission earned are payout when total tokens is reached to 100 for ICO token. </span></p>
         </div>
@@ -261,7 +261,9 @@ export default function App() {
       <div className="max_width center text-center flex-column m-aut0">
         <h5>Already have an account? <a href="https://login.affiliate.indexx.ai/" to="" className="text-primary">Log In</a> </h5>
         <hr />
+       
         <h5>Sign up with your social network account</h5>
+        <br/>
       </div>
       {/* <div className="center">
         <h3 className="center">YOUR INFORMATION</h3>
