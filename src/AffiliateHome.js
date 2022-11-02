@@ -23,13 +23,14 @@ export default function AffiliateHome() {
         <div className="banner__card card home_a">
           <p className="banner__message card_body m-0 text-center p-3"> Earn rewards when introduce your community to crypto. Get upto $1,000 <div>for every referral. See program terms below.</div></p>
         </div>
+        <Link to={`/about`} className="link_button">
+          <button className="primary-button">Become an Affiliate </button>
+        </Link>
       </div>
 
-      <Link to={`/about`} className="link_button"
 
-      ><button className="primary-button">Become an Affiliate </button></Link>
-    
-    <Footer />
+
+      <Footer />
     </div>
   )
 }

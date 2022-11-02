@@ -245,9 +245,9 @@ export default function App() {
     <div>
       <div className="main-header">
         <img src={indexx_logo} alt="indexx logo" height="35" />
-        <h1 className="logo__text ">AFFILIATE PROGRAM</h1>
+        <h1 className="logo__text">AFFILIATE PROGRAM</h1>
       </div>
-      <div className="banner flex-column">
+      <div className="banner flex-column banner_affiliate_form">
         <div className="d-flex mt-2 ">
           <img src={indexIcon} alt="index icon" />
           <img src={indexGreyLogo} className="p-lg-2" alt="index grey logo" />

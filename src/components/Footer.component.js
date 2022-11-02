@@ -4,6 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import indexText from "../assets/arts/indexText.svg";
 import personFlipCoin from "../assets/arts/personFlipCoin.svg";
+import needHelp from "../assets/arts/needHelp.svg";
 import Instagram from "../assets/icons/instagram.png";
 import Reddit from "../assets/icons/reddit.png";
 import Twitter from "../assets/icons/twitter.png";
@@ -41,14 +42,16 @@ const Footer = () => {
 
     return (
         <footer className="site_footer position-relative">
-
+            <Link to="/help" className="need_help" style={{ backgroundImage: `url(${needHelp})` }}>
+                Need Help?
+            </Link>
 
 
             <div className="flex-align-center d-flex flex-justify-between site_footer_inner">
                 <div className="col-xs-6 col-md-4 ">
 
                     <h1>
-                       
+
                         <a class="primary_color" href="/">Get Connected</a>
                     </h1>
                     <div className="social-wrapper">
@@ -56,8 +59,8 @@ const Footer = () => {
                             {icons.map((icon, index) => (
                                 <li key={index} >
                                     {/* <a href={icon.href} target="_blank" rel="noopener noreferrer"> */}
-                                        <img className="social-connect-icons" src={icon.src} alt={icon.alt} />
-                                        {/* </a> */}
+                                    <img className="social-connect-icons" src={icon.src} alt={icon.alt} />
+                                    {/* </a> */}
                                 </li>
                             ))}
                         </ul>
@@ -96,14 +99,14 @@ const Footer = () => {
 
 
                 </div>
-                
+
             </div>
             <div className="copyright_bar">
-                    <p className="copyright_text">
-                        Copyright © 2022 All Rights Reserved by Indexx.
-                    </p>
-                    <br />
-                </div>
+                <p className="copyright_text">
+                    Copyright © 2022 All Rights Reserved by Indexx.
+                </p>
+                <br />
+            </div>
         </footer>
     );
 };
