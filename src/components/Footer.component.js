@@ -5,13 +5,16 @@ import { Link } from "react-router-dom";
 import indexText from "../assets/arts/indexText.svg";
 import personFlipCoin from "../assets/arts/personFlipCoin.svg";
 import needHelp from "../assets/arts/needHelp.svg";
-import Instagram from "../assets/icons/instagram.png";
-import Reddit from "../assets/icons/reddit.png";
-import Twitter from "../assets/icons/twitter.png";
-import YouTube from "../assets/icons/youtube.png";
+// import Instagram from "../assets/icons/instagram.png";
+// import Reddit from "../assets/icons/reddit.png";
+// import Twitter from "../assets/icons/twitter.png";
+// import YouTube from "../assets/icons/youtube.png";
 // import Twitter from "../assets/arts/twitterIcon.svg";
-
 // import YouTube from "../assets/arts/youtTubeIcon.svg";
+import Instagram from "../assets/arts/instagramIcon.svg";
+import Twitter from "../assets/arts/twitterIcon.svg";
+import YouTube from "../assets/arts/youtTubeIcon.svg";
+import facebook from "../assets/arts/fb_logo.png";
 
 import "./Footer.css";
 
@@ -19,23 +22,23 @@ const Footer = () => {
     const icons = [
         {
             src: Instagram,
-            href: "",
+            href: "https://www.instagram.com/indexx_ai/",
             alt: "Instagram",
         },
         {
             src: Twitter,
-            href: "https://twitter.com/IndexxFinance",
+            href: "https://twitter.com/Indexx_ai",
             alt: "Twitter",
         },
         {
             src: YouTube,
-            href: "",
+            href: "https://www.youtube.com/channel/UCYXrfhPg7jUMBxPEBCEsaFw",
             alt: "You-tube",
         },
         {
-            src: Reddit,
-            href: "",
-            alt: "Reddit",
+            src: facebook,
+            href: "https://www.facebook.com/profile.php?id=100086225564460",
+            alt: "facebook",
         },
     ]
 
@@ -48,12 +51,12 @@ const Footer = () => {
 
 
             <div className="flex-align-center d-flex flex-justify-between site_footer_inner">
-                <div className="col-xs-6 col-md-4 ">
+                <div className=" col-sm-12 col-md-12">
 
-                    <h1>
+                    {/* <h1>
 
                         <a class="primary_color" href="/">Get Connected</a>
-                    </h1>
+                    </h1> */}
                     <div className="social-wrapper">
                         <ul>
                             {icons.map((icon, index) => (
@@ -70,24 +73,20 @@ const Footer = () => {
                     <h1>
                         <Link to="/"><img src={indexText} alt="index logo" /></Link>
                     </h1>
-                    <br />
-                    <p className="text-extra-small">
+                    <p className="text-extra-small pb-4 mb-2">
                         Indexx stock token is the world first coin <br />
                         pegged with world largest stock market <br />
                         index the S&P 500. Pioneered the concept in <br />
-                        the cryptocurrency space.
+                        the cryptocurrency space.<br />
                     </p>
-                    <p className="footer_center_text">
-                        <span className="d-block">949-228-9079</span>
-                        <br />
+                    <p className="footer_center_text pb-4">
 
                         indexx Limited, CUB Financial Centre,<br />
-                        GF6, Lyford Cay, Nassau, Bahamas.<br /> <br />
+                        GF6, Lyford Cay, Nassau, Bahamas.<br />
 
                         550 Newport Center Drive<br />
-                        Newport Beach,<br />
+                        Newport Beach,
                         CA 92660 United State<br />
-                        <br />
                     </p>
 
                 </div>
@@ -102,7 +101,7 @@ const Footer = () => {
 
             </div>
             <div className="copyright_bar">
-                <p className="copyright_text">
+                <p className="copyright_text m-0 text-light">
                     Copyright © 2022 All Rights Reserved by Indexx.
                 </p>
                 <br />

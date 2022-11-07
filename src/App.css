@@ -336,7 +336,7 @@ label {
   padding-left: 5px;
   font-size: 30px;
   margin-bottom: 0;
-  line-height: 1.6;
+  line-height: 1;
 }
 
 /* 
@@ -369,7 +369,8 @@ label {
   align-items: center;
   justify-content: center;
   /* background-image: url("./assets/banner.svg"); */
-  background-image: url("./assets/affiliateBanner.png");
+  /* background-image: url("./assets/affiliateBanner.png"); */
+  background-image: url("./assets/affliateWatermark.png");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 150px;
@@ -380,7 +381,9 @@ label {
 
 .banner_affiliate_form {
   margin-top: 90px;
-  background-image: url("./assets/bannerForAffliateForm.png");
+  /* background-image: url("./assets/bannerForAffliateForm.png"); */
+
+  background-image: url("./assets/affliateWatermark.png");
 
 }
 
@@ -847,7 +850,8 @@ div[role='menu'].visible {
 
 /*Social Media Icons*/
 .social-wrapper {
-  text-align: center;
+  /* text-align: center; */
+  padding-left: 30px;
 }
 
 .social-wrapper ul li {
@@ -1027,6 +1031,7 @@ input, select {
 
 .banner__card.card.home_a {
   border: 0;
+  background-color: transparent;
 }
 
 .home_a_logo {
