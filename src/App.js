@@ -4,6 +4,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AffiliateHome from './AffiliateHome';
 import Affiliate from "./Affiliate";
 
+
+function About() {
+    // 👇️ redirect to external URL
+    window.location.replace('http://localhost:3000/indexx-exchange/help');
+
+    return null;
+}
+
 const App = () => {
     return (
         <div>
@@ -11,10 +19,10 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<AffiliateHome />} />
                     <Route path="/about" element={<Affiliate />} />
-
+                    <Route path="/help" element={<About />} />
                 </Routes>
             </BrowserRouter>
-            
+
 
         </div>
 

@@ -19,8 +19,8 @@ import itLocale from "i18n-iso-countries/langs/it.json";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // import LogoIcon from "./indexx_affiliate_logo.png";
 import indexx_logo from "./assets/indexText.svg";
-import indexGreyLogo from "./assets/indexGreyLogo.svg";
-import indexIcon from "./assets/indexIcon.svg";
+// import indexGreyLogo from "./assets/indexGreyLogo.svg";
+// import indexIcon from "./assets/indexIcon.svg";
 import timezones from "./timezones";
 import * as axios from "axios";
 import Footer from "../src/components/Footer.component";
@@ -226,14 +226,14 @@ export default function App() {
       });
 
       console.log(response);
-      if(response.status === 200 && response.data.message === "Email already exist!") {
+      if (response.status === 200 && response.data.message === "Email already exist!") {
         alert("Email already exist! Please sign in or use another email");
       }
       else if (response.status === 200) {
         console.log("success");
         alert("Registration success. We are reviewing your application. You receive an email when your application is approved");
-      } 
-       else {
+      }
+      else {
         alert("Something went error! Please contact us support@indexx.ai");
       }
     } else {
@@ -244,31 +244,34 @@ export default function App() {
   return (
     <div>
       <div className="main-header">
-        <img src={indexx_logo} alt="indexx logo" height="35" />
-        <h1 className="logo__text ">AFFILIATE PROGRAM</h1>
+        <img src={indexx_logo} alt="indexx logo" height="25" />
+        <h1 className="logo__text ps-3">Affiliate Program</h1>
       </div>
-      <div className="banner flex-column">
-        <div className="d-flex mt-2 ">
+      <div className="banner flex-column banner_affiliate_form">
+        {/* <div className="d-flex mt-2 ">
           <img src={indexIcon} alt="index icon" />
           <img src={indexGreyLogo} className="p-lg-2" alt="index grey logo" />
-        </div>
+        </div> */}
         <h1 className="banner__heading m-3 mb-4">Affiliate Program</h1>
-        <h1> <strong>50% Commission </strong></h1>
-        <div className="banner__card card border-primary">
+        {/* <h1> <strong>50% Commission </strong></h1> */}
+        <div className="banner__card card border-primary bg-transparent">
           <p className="banner__message card-body m-0"><span> Note: This commision applies once your referral completes a purchase of any ICO tokens (Indexx500, IndexxCrypto, IndexxUSD+). All the commission earned are payout when total tokens is reached to 100 for ICO token. </span></p>
         </div>
+        <div className="max_width center text-center flex-column m-aut0 pt-5 mt-2">
+          <h5>Already have an account? <a href="https://login.affiliate.indexx.ai/" to="" className="text-primary">Log In</a> </h5>
+          <hr />
+
+          <h5>Sign up with your social network account</h5>
+          <br />
+        </div>
       </div>
-      <div className="max_width center text-center flex-column m-aut0">
-        <h5>Already have an account? <a href="https://login.affiliate.indexx.ai/" to="" className="text-primary">Log In</a> </h5>
-        <hr />
-        <h5>Sign up with your social network account</h5>
-      </div>
+
       {/* <div className="center">
         <h3 className="center">YOUR INFORMATION</h3>
 
       </div> */}
       <div className="form-center">
-        <form className="form-inline" onSubmit={handleSubmit}  autoComplete="off">
+        <form className="form-inline" onSubmit={handleSubmit} autoComplete="off">
           <br></br>
           <h3>YOUR INFORMATION</h3>
           <br></br>
