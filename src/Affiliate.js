@@ -201,7 +201,7 @@ export default function App() {
     }
     if (email && password && userName && confirmPassword && emailConfirm && firstName && lastName && phoneNumber && selectedCountry && selectedTimeZone && selectedSocialMedia && selectedPlaftormCommunity && socialMediaUsername && affiliateType && companyURL && streetAddress1 && city && zipCode) {
       // ..code to submit form to backend here...
-      const response = await axios.post(`https://f30e-49-207-203-236.ngrok.io/api/v1/addaffiliateuser`, {
+      const response = await axios.post(`https://test.api.affiliate.indexx.ai/api/v1/addaffiliateuser`, {
         email,
         userName,
         password,
